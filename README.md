@@ -6,11 +6,11 @@ Landing page generada y publicada automaticamente por CDTK para **JJ Peluches**.
 - Project ID: JJPeluches
 - Nombre del negocio: JJ Peluches
 - Sector: comercio
-- WhatsApp: +570000000000
+- WhatsApp: +573000000000
 
 ## Publicacion
 - Publish target: preview_only
-- Generado el: 2026-10-01T02:44:10.137Z
+- Generado el: 2026-10-01T02:49:23.642Z
 
 Este repositorio contiene la landing publicada (`index.html`), los avisos de licencias (`THIRD_PARTY_NOTICES.md`) y el historial de generaciones (`.orchestrator-audit.jsonl`).
 Las licencias y atribuciones de los componentes incorporados están documentadas en [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).

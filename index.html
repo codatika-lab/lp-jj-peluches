@@ -1542,11 +1542,43 @@ Esta evaluación documenta el uso técnico actual. Cualquier cambio que conviert
         <h2 id="product-modal-title" data-product-modal-name></h2>
         <p class="product-modal-description" data-product-modal-description hidden></p>
         <p class="precio product-modal-price" data-product-modal-price hidden></p>
-        
+        <div class="product-modal-actions" data-cart-add-form>
+          <div class="cart-quantity" role="group" aria-label="Cantidad">
+            <button type="button" class="cart-quantity-btn" data-cart-quantity-step="-1" aria-label="Quitar una unidad"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+            <output class="cart-quantity-value" data-cart-quantity aria-live="polite">1</output>
+            <button type="button" class="cart-quantity-btn" data-cart-quantity-step="1" aria-label="Agregar una unidad"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button>
+          </div>
+          <button type="button" class="cart-add" data-cart-add>Agregar al pedido</button>
+        </div>
       </div>
     </div>
   </dialog>
-  
+  <button type="button" class="cart-fab" data-cart-open aria-haspopup="dialog" aria-controls="cart-panel" hidden>
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>
+    <span class="cart-fab-label">Ver pedido</span>
+    <span class="cart-fab-count" data-cart-count>0</span>
+  </button>
+  <p class="cart-status" role="status" data-cart-status></p>
+  <dialog class="cart-panel" id="cart-panel" aria-labelledby="cart-title" data-cart data-cart-whatsapp="573000000000" data-cart-business="JJ Peluches" data-cart-currency="COP$" data-cart-currency-code="COP" data-cart-key="JJPeluches">
+    <div class="cart-panel-inner">
+      <div class="cart-panel-header">
+        <h2 id="cart-title">Tu pedido</h2>
+        <button type="button" class="cart-close" data-cart-close aria-label="Cerrar pedido"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+      </div>
+      <p class="cart-empty" data-cart-empty>Aún no has agregado productos.</p>
+      <ul class="cart-items" data-cart-items></ul>
+      <div class="cart-panel-footer">
+        <label class="cart-note">
+          <span>Nota para el pedido (opcional)</span>
+          <textarea data-cart-note rows="2" maxlength="300" placeholder="Dirección de entrega, indicaciones…"></textarea>
+        </label>
+        <p class="cart-total"><span>Total</span><strong data-cart-total>COP$0</strong></p>
+        <p class="cart-pending" data-cart-pending hidden>Incluye productos con precio a confirmar.</p>
+        <button type="button" class="cart-send" data-cart-send><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg><span>Enviar pedido por WhatsApp</span></button>
+        <button type="button" class="cart-clear" data-cart-clear>Vaciar pedido</button>
+      </div>
+    </div>
+  </dialog>
   <a class="floating-btn floating-btn--left llamar" href="tel:+573000000000" aria-label="Llamar"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></a>
   <a class="floating-btn floating-btn--right whatsapp" href="https://wa.me/573000000000" aria-label="WhatsApp"><svg class="icon icon--brand" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg></a>
   <script data-motion-runtime="gsap">/*!
